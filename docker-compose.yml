@@ -1,0 +1,12 @@
+version: '2.2'
+services:
+  mosquitto:
+    restart: always
+    image: "eclipse-mosquitto"
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - /Users/sgkim/mqtt_broker/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - /Users/sgkim/mqtt_broker/data:/mosquitto/data
+      - /Users/sgkim/mqtt_broker/log:/mosquitto/log
